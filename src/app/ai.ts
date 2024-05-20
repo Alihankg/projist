@@ -1,11 +1,10 @@
-import dotenv from 'dotenv'
-dotenv.config()
+'use server'
 const {
 	GoogleGenerativeAI,
 	HarmCategory,
 	HarmBlockThreshold,
 } = require('@google/generative-ai')
-const genAI = new GoogleGenerativeAI('AIzaSyCwYFa04IhaPz4KG0w9NM0R8ScG3ksQ8JQ')
+const genAI = new GoogleGenerativeAI(process.env.API_KEY)
 const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' })
 
 const generationConfig = {
