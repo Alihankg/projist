@@ -17,12 +17,12 @@ export default function Home() {
 	return (
 		<>
 			<Navbar />
-			<div className="p-8 text-base-300 mx-auto h-1/2 max-h-min">
+			<div className="p-8 text-black mx-auto h-1/2 max-h-min">
 				<div className="flex flex-col gap-4">
 					{history.map((msg, i) => (
 						<div key={i}>
 							<div
-								className={`w-fit max-w-4xl rounded p-4 bg-slate-200 text-black ${
+								className={`w-fit max-w-4xl rounded p-4 bg-slate-200 ${
 									i % 2 == 0 ? 'ml-auto' : 'left-0'
 								}`}>
 								{<Markdown remarkPlugins={[remarkGfm]}>{msg}</Markdown>}
