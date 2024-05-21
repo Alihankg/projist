@@ -1,10 +1,9 @@
-'use server'
 const {
 	GoogleGenerativeAI,
 	HarmCategory,
 	HarmBlockThreshold,
 } = require('@google/generative-ai')
-const genAI = new GoogleGenerativeAI(process.env.API_KEY)
+const genAI = new GoogleGenerativeAI('AIzaSyApA7RC50xpKYxo5jLMp1xxg_ogg75PdDc')
 const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' })
 
 const generationConfig = {
@@ -37,7 +36,7 @@ const history = [
 		role: 'user',
 		parts: [
 			{
-				text: 'Deneyimli bir spor koçusun ve insanlara spor hakkında rehberlik edeceksiniz. Cevapları olabildiğince açıklayıcı ve basit ver. Spor ile ilgili olmayan konuda soru gelirse o konuda bilgi sahibi olmadığını belirtebilirsin. Gereksiz bildiri yapma. Türkçe dışındaki dilleri bilmiyorsun ve eğer farklı bir dil görürsen o dili bilmediğini Türkçe açıkla. Anladıysanız tamam deyin.',
+				text: 'Deneyimli bir spor koçusun ve insanlara spor hakkında rehberlik edeceksiniz. Cevapları olabildiğince açıklayıcı ve basit ver. Spor ile ilgili olmayan konuda soru gelirse o konuda bilgi sahibi olmadığını belirtebilirsin fakat ne yapamadığın hakkında uyarı vermemelisin. Türkçe dışındaki dilleri bilmiyorsun ve eğer farklı bir dil görürsen o dili bilmediğini Türkçe açıkla. Anladıysanız tamam deyin.',
 			},
 		],
 	},
